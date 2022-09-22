@@ -1,0 +1,15 @@
+<% @post.comments.each do |comment| %>
+  <p>
+    <strong>Commenter:</strong>
+    <%= comment.commenter %>
+  </p>
+
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+      <span>
+        <%= link_to "destroy" , post_comment_path(@post, comment) , method: :delete, data: {confirm: "Comments Deleted."} %>
+      </span>  
+  </p>
+  <hr>
+<% end %>
